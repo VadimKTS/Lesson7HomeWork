@@ -39,14 +39,5 @@ namespace Lesson7HomeWork
 
             return number;
         }
-
-        // проверить как работает
-        public void sendMessage(params string[] number)
-        {
-            foreach (var item in number)
-            {
-                Console.WriteLine($"Сообщение отправлено на номер {item}");
-            }
-        }
     }
 }
