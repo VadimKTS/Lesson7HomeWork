@@ -4,12 +4,10 @@ namespace Lesson7HomeWork
     internal class Patient
     {
         public string patientName { get; set; }
-        public int patientDiagnosisCode { get; set; }
 
-        public Patient(string patientName, int patientDiagnosisCode) 
+        public Patient(string patientName) 
         { 
             this.patientName = patientName;
-            this.patientDiagnosisCode = patientDiagnosisCode;
         }
     }
 }

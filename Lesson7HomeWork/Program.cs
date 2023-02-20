@@ -12,22 +12,27 @@
         }
 
         // For Task 1.2 ---------------------------------------------------------------
-        public static void prescribeTreatment(int treatmentCode) 
+
+            public static void prescribeTreatment(string name, int treatmentCode) 
         {
+            
             if (treatmentCode == 1)
             {
-                Console.WriteLine($"Назначен {Medic.medicsType} {Medic.medicsName}");
-                Medic.ToTreat();
+                Surgeon surgeon = new Surgeon("Денис", "хирург");
+                Console.WriteLine($"Назначен {surgeon.medicsType} {surgeon.medicsName}");
+                surgeon.ToTreat(name);
             }
             else if (treatmentCode == 2)
             {
-                Console.WriteLine($"Назначен {Medic.medicsType} {Medic.medicsName}");
-                Medic.ToTreat();
+                Dentist dentist = new Dentist("Сергей", "дантист");
+                Console.WriteLine($"Назначен {dentist.medicsType} {dentist.medicsName}");
+                dentist.ToTreat(name);
             }
             else
             {
-                Console.WriteLine($"Назначен {Medic.medicsType} {Medic.medicsName}");
-                Medic.ToTreat();
+                Therapist therapist = new Therapist("Павел", "терапевт");
+                Console.WriteLine($"Назначен {therapist.medicsType} {therapist.medicsName}");
+                therapist.ToTreat(name);
             }
         }
 
@@ -35,7 +40,7 @@
         static void Main(string[] args)
         {
             // Task 1.1----------------------------------------------------------------
-            
+
             //Phone nokia = new Phone("079876987", "Нокиа", 383);
             //Console.WriteLine($"Номер: {nokia.number}, модель: {nokia.model}, вес: {nokia.weight}");
             //nokia.recieveCall("Alex");
@@ -45,7 +50,7 @@
             //Console.WriteLine($"Номер: {sony.number}, модель: {sony.model}, вес: {sony.weight}");
             //sony.recieveCall("Inga");
             //Console.WriteLine(sony.getNumber());
-            
+
             //Phone apple = new Phone();
             //Console.WriteLine($"Номер: {apple.number}, модель: {apple.model}, вес: {apple.weight}");
             //apple.recieveCall("Maxim");
@@ -62,18 +67,23 @@
 
 
             // Task 1.2 ----------------------------------------------------------------------
-
             
-            //Medic surgeon = new Medic("Денис", "хирург");
-            //Medic dentist = new Medic("Сергей", "дантист");
-            //Medic therapist = new Medic("Павел", "терапевт");
+            TreatmentPlan codeForSurgeon = new("перелом");
+            TreatmentPlan codeForDentist = new("флюс");
+            TreatmentPlan codeForTherapist = new("температура");
+            TreatmentPlan codeForTherapist2 = new("кашель");
 
-            Patient patient0 = new Patient("Николай", 0);
-            prescribeTreatment(patient0.patientDiagnosisCode);
-            Patient patient1 = new Patient("Леонид", 1);
-            Patient patient2 = new Patient("Александр", 2);
-            Patient patient3 = new Patient("Пётр", 3);
+            Patient patient0 = new Patient("Николай");
+            prescribeTreatment(patient0.patientName, codeForSurgeon.treatmentCode);
 
+            Patient patient1 = new Patient("Леонид");
+            prescribeTreatment(patient1.patientName, codeForDentist.treatmentCode);
+
+            Patient patient2 = new Patient("Александр");
+            prescribeTreatment(patient2.patientName, codeForTherapist.treatmentCode);
+
+            Patient patient3 = new Patient("Пётр");
+            prescribeTreatment(patient3.patientName, codeForTherapist2.treatmentCode);
 
 
             // Task 2.1 (основное задание) ------------------------------------------------------

@@ -5,12 +5,14 @@ namespace Lesson7HomeWork
     {
         public string medicsName;
         public string medicsType;
-        public Medic(string medicsName, string medicsType) 
+        public Medic(string medicsName, string medicsType)
         {
             this.medicsName = medicsName;
             this.medicsType = medicsType;
         }
-        public virtual void ToTreat()
+        public Medic() { }
+
+        public virtual void ToTreat(string name)
         {
             
         }
