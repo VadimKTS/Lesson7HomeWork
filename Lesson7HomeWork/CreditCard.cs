@@ -1,33 +1,30 @@
-﻿
-using System.Security.Principal;
-
-namespace Lesson7HomeWork
+﻿namespace Lesson7HomeWork
 {
     internal class CreditCard
     {
-        public int bankAccountNumber { get; set; }
-        public decimal amountOnAccountr { get; set; }
-        public CreditCard(int bankAccountNumber, decimal amountOnAccountr) 
+        public int BankAccountNumber { get; set; }
+        public decimal AmountOnAccountr { get; set; }
+        public CreditCard(int BankAccountNumber, decimal AmountOnAccountr) 
         {
-            this.bankAccountNumber = bankAccountNumber;
-            this.amountOnAccountr = amountOnAccountr;
+            this.BankAccountNumber = BankAccountNumber;
+            this.AmountOnAccountr = AmountOnAccountr;
         }
 
-        public decimal creditToAccount(decimal creditSumm) 
+        public decimal CreditToAccount(decimal creditSumm) 
         {
-            Console.WriteLine($"На счет №{bankAccountNumber} зачислено {creditSumm}");
-            return amountOnAccountr += creditSumm;
+            Console.WriteLine($"На счет №{BankAccountNumber} зачислено {creditSumm}");
+            return AmountOnAccountr += creditSumm;
         }
 
-        public decimal debitTheAccount(decimal debitSumm) 
+        public decimal DebitTheAccount(decimal debitSumm) 
         {
-            Console.WriteLine($"Со счета №{bankAccountNumber} списано {debitSumm}");
-            return amountOnAccountr -= debitSumm;
+            Console.WriteLine($"Со счета №{BankAccountNumber} списано {debitSumm}");
+            return AmountOnAccountr -= debitSumm;
         }
 
-        public void showAccountSumm() 
+        public void ShowAccountSumm() 
         {
-            Console.WriteLine($"Сумма на счете №{bankAccountNumber} = {amountOnAccountr}");
+            Console.WriteLine($"Сумма на счете №{BankAccountNumber} = {AmountOnAccountr}");
         }
     }
 }

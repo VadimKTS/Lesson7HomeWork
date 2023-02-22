@@ -1,20 +1,17 @@
 ﻿
+using System.Xml.Linq;
+
 namespace Lesson7HomeWork
 {
     class Medic
     {
-        public string medicsName;
-        public string medicsType;
-        public Medic(string medicsName, string medicsType)
+        public string MedicsName;
+        public Medic(string MedicsName)
         {
-            this.medicsName = medicsName;
-            this.medicsType = medicsType;
+            this.MedicsName = MedicsName;
         }
         public Medic() { }
 
-        public virtual void ToTreat(string name)
-        {
-            
-        }
+        public virtual void ToTreat(string name) {  }
     }
 }

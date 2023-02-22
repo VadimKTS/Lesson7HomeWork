@@ -3,10 +3,9 @@ namespace Lesson7HomeWork
 {
     internal class Therapist : Medic
     {
-        public Therapist(string medicsName, string medicsType)
+        public Therapist(string MedicsName)
         {
-            this.medicsName = medicsName;
-            this.medicsType = medicsType;
+            this.MedicsName = MedicsName;
         }
         public override void ToTreat(string name)
         {
