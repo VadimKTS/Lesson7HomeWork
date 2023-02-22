@@ -3,41 +3,51 @@
 namespace Lesson7HomeWork
 {
     // For Task 1.1--------------------------------------------------------------
+
+
     internal class Phone
     {
-        public string number { get; set; }
-        public string model { get; set; }
-        public int weight { get; set; }
+        public string Number { get; set; }
+        public string Model { get; set; }
+        public int Weight { get; set; }
 
         
-        public Phone( string number, string model, int weight) : this(number, model)
+        public Phone( string Number, string Model, int Weight) : this(Number, Model)
         {
-            this.weight = weight;
+            this.Weight = Weight;
         }
 
-        public Phone(string number, string model) 
+        public Phone(string Number, string Model) 
         {
-            this.number = number;
-            this.model = model;
+            this.Number = Number;
+            this.Model = Model;
         }
 
         public Phone() { }
         
         
-        public void recieveCall(string name)
+        public void RecieveCall(string name)
         {
             Console.WriteLine($"Звонит {name}");
         }
 
-        public void recieveCall(string name, string number)
+        public void RecieveCall(string name, string Number)
         {
-            Console.WriteLine($"Звонит {name} \n.......{number}");
+            Console.WriteLine($"Звонит {name} \n.......{Number}");
         }
 
-        public string getNumber()
+        public string GetNumber()
         {
 
-            return number;
+            return Number;
+        }
+
+        public static void SendMessage(params string[] number)
+        {
+            foreach (var item in number)
+            {
+                Console.WriteLine($"Сообщение отправлено на номер {item}");
+            }
         }
     }
 }
